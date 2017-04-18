@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="shortcut icon" href="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png" type="image/x-icon" />
+  <title>Haylee Ham</title>
+</head>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+
+<html>
+
+<body>
+
+<nav class="navbar navbar-default" style= "background-color:#6FB2C4">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="./">
+        <img style="width:50px;" src="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png">
+      </a>
+    </div>
+    <p class="navbar-text navbar-right"><a href= "./" class="navbar-link">Home</a></p>
+  </div>
+</nav>
+
+<div style="margin-left: auto; margin-right:auto; width:700px;">
+
+	<h1> Migration Trends Data </h1>
+
+</div>
+
+{% if bilateral_list %}
+    <ul>
+    {% for record in bilateral_list %}
+        <li><a href="/mysite/{{ record.id }}/">{{ record.country_orig }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No records are available.</p>
+{% endif %}
+
+
+ </body>
+ </html>
