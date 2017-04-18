@@ -9,7 +9,7 @@ django.setup()
 
 from mysite.models import Bilateral
 
-bilateral_data = pd.read_csv('bilateral_flow.csv', low_memory=False)
+bilateral_data = pd.read_csv('django_app/bilateral_flow.csv', low_memory=False)
 
 for index, row in bilateral_data.iterrows():
     region_orig = row[0]
