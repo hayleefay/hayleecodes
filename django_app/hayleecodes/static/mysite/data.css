@@ -1,0 +1,7 @@
+.bilateral-table {
+  overflow-x: scroll;
+}
+
+.bilateral-table td {
+  white-space: nowrap;
+}

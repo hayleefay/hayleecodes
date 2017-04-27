@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'mysite/index.html')
 
 def data(request):
-    bilateral_list = Bilateral.objects.all()
+    bilateral_list = Bilateral.objects.all()[:100]
     context = {
         'bilateral_list': bilateral_list,
     }
