@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-
-<head>
-  <link rel="shortcut icon" href="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png" type="image/x-icon" />
-  <title>Haylee Ham</title>
-</head>
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
-
 <html>
+  <head>
+    <title>Haylee Ham</title>
+    <link rel="shortcut icon" href="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png" type="image/x-icon" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mysite/data.css' %}" />
+  </head>
 
-<body>
+  <body>
+    <nav class="navbar navbar-default" style= "background-color:#6FB2C4">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="./">
+            <img style="width:50px;" src="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png">
+          </a>
+        </div>
+        <p class="navbar-text navbar-right"><a href= "/" class="navbar-link">Home</a></p>
+      </div>
+    </nav>
 
-<nav class="navbar navbar-default" style= "background-color:#6FB2C4">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="./">
-        <img style="width:50px;" src="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png">
-      </a>
+    <div class="container">
+      <h1>Migration Trends Data</h1>
+
+      <div class="row">
+        <div class="col-xs-12">
+          {% if bilateral_list %}
+            <div class="bilateral-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>region_orig</th>
+                    <th>region_dest</th>
+                    <th>country_orig</th>
+                    <th>country_dest</th>
+                    <th>regionflow_1990</th>
+                    <th>regionflow_1995</th>
+                    <th>regionflow_2000</th>
+                    <th>regionflow_2005</th>
+                    <th>countryflow_1990</th>
+                    <th>countryflow_1995</th>
+                    <th>countryflow_2000</th>
+                    <th>countryflow_2005</th>
+                    <th>metadata</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for record in bilateral_list %}
+                    <tr>
+                      <td>{{ record.region_orig }}</td>
+                      <td>{{ record.region_dest }}</td>
+                      <td>{{ record.country_orig }}</td>
+                      <td>{{ record.country_dest }}</td>
+                      <td>{{ record.regionflow_1990 }}</td>
+                      <td>{{ record.regionflow_1995 }}</td>
+                      <td>{{ record.regionflow_2000 }}</td>
+                      <td>{{ record.regionflow_2005 }}</td>
+                      <td>{{ record.countryflow_1990 }}</td>
+                      <td>{{ record.countryflow_1995 }}</td>
+                      <td>{{ record.countryflow_2000 }}</td>
+                      <td>{{ record.countryflow_2005 }}</td>
+                      <td>{{ record.metadata }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% else %}
+            <p>No records available.</p>
+          {% endif %}
+        </div>
+      </div>
     </div>
-    <p class="navbar-text navbar-right"><a href= "./" class="navbar-link">Home</a></p>
-  </div>
-</nav>
-
-<div style="margin-left: auto; margin-right:auto; width:700px;">
-
-	<h1> Migration Trends Data </h1>
-
-</div>
-
-{% if bilateral_list %}
-    <ul>
-    {% for record in bilateral_list %}
-        <li><a href="/mysite/{{ record.id }}/">{{ record.country_orig }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No records are available.</p>
-{% endif %}
-
-
- </body>
- </html>
+  </body>
+</html>
