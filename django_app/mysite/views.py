@@ -20,4 +20,4 @@ def detail(request, record_id):
     return render(request, 'mysite/detail.html', context)
 
 def pdf_view(request):
-    return FileResponse(open('mysite/templates/mysite/resume.pdf', 'rb'), content_type='application/pdf')
+    return FileResponse(open('mysite/resume.pdf', 'rb'), content_type='application/pdf')
