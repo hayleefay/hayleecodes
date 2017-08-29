@@ -168,12 +168,3 @@ class WorkingAgeRate(models.Model):
     year_2008 = models.FloatField(default=0, null=True)
     year_2009 = models.FloatField(default=0, null=True)
     year_2010 = models.FloatField(default=0, null=True)
-
-    # social
-    # cultural
-    # border security
-    # political
-    # geographic
-    # governmental programs (spending): welfare magnate effect
-    # diasporas
-    # language

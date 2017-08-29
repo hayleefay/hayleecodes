@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 
 <head>
-  <link rel="shortcut icon" href="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png" type="image/x-icon" />
+  {% load static %}
+  <link rel="shortcut icon" href="{% static "mysite/pig.png" %}" type="image/x-icon" />
   <title>Haylee Ham</title>
-</head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    a {
+        color: #5C6AC4;
+        transition: color 0.25s;
+    }
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    a:hover {
+        color: #F49342;
+        text-decoration: none;
+    }
+  </style>
+</head>
 
 <html>
 
-<body>
+<body style="background-color:#F4F6F8">
 
-<nav class="navbar navbar-default" style= "background-color:#6FB2C4">
+<nav class="navbar navbar-default" style="background-color:#43467F">
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="./">
-        <img style="width:50px;" src="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png">
+        <img style="width:50px;" src="{% static "mysite/pig.png" %}">
       </a>
     </div>
   </div>
 </nav>
 
 <div class="text-center">
-
-	<h1> haylee.codes </h1>
-
+  <div class="row">
+    <div class="col-lg-4 text-center">
+      <img style="width:300px" src="{% static "mysite/haylee.png" %}" alt="Haylee Ham"/>
+    </div>
+    <div class="col-lg-7 text-center">
+      <h2> My name is Haylee Ham. I am a master's student at the University of Chicago in Computational Social Science. Don't believe me? <a href="./resume">Here's my resume.</a></h2>
+    </div>
+  </div>
 </div>
 
 <div class="container marketing">
   <div class="row">
     <div class="col-lg-4 text-center">
-      <a href="./data">
-        <img style="align:center;width:150px;" src="http://emojipedia-us.s3.amazonaws.com/cache/d9/f8/d9f81897221cb472792f89c91c080c79.png">
-        <h4 class="text-info">Migration Trends Data</h4>
+      <a href="https://damp-mesa-27707.herokuapp.com/">
+        <img style="align:center;width:150px;" src="{% static "mysite/plot.png" %}">
+        <h4 class="text-info">Data Visualization</h4>
       </a>
     </div>
 
     <div class="col-lg-4 text-center">
       <a href="http://www.veryfuntweets.com">
-        <img style="align:center;width:150px;" src="http://emojipedia-us.s3.amazonaws.com/cache/ab/77/ab7774e9818de3e23a307af6989b65b2.png">
+        <img style="align:center;width:150px;" src="{% static "mysite/hashtag.png" %}">
         <h4 class="text-info">Very Fun Tweets</h4>
       </a>
     </div>
 
     <div class="col-lg-4 text-center">
       <a href="https://github.com/hayleefay">
-        <img style="align:center;width:150px;" src="https://octodex.github.com/images/cherryontop-o-cat.jpg">
+        <img style="align:center;height:150px;" src="{% static "mysite/octocat.png" %}">
         <h4 class="text-info">GitHub</h4>
     </div>
   </div>
